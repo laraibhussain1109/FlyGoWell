@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+          body {
+          animation: change-background 30s infinite;
+          background-size: cover;
+        }
+
+        @keyframes change-background 
+        {
+        0%{background-image: url('https://images.unsplash.com/photo-1589561454226-796a8aa89b05?q=80&w=1734&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');}  
+        33% {background-image: url('https://images.unsplash.com/photo-1531497825193-b208e39d008f?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');}
+      66% {background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');}
+      100% {background-image: url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');}
+    }
+        .container {
+            margin-top: 100px;
+        }
+        .card {
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <header class="card-header">
+                        <h4 class="card-title mt-2">Sign Up</h4>
+                    </header>
+                    <article class="card-body">
+                        <form action="/signup" method="post">
+                        {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col form-group">
+                                    <label>First name</label>   
+                                    <input type="text" id="fname" name="fname" class="form-control" placeholder="Enter your first name" required>
+                                </div>
+                                <div class="col form-group">
+                                    <label>Last name</label>
+                                    <input type="text" id="lname" name="lname" class="form-control" placeholder="Enter your last name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" id="username" name="username" class="form-control" placeholder="Enter a Username" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email address</label>
+                                <input type="email" class="form-control" name="email" placeholder="you@example.com" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input class="form-control" type="password" id="pass1" name="pass1" required>
+                            <div class="form-group">
+                                <label>Confirm Password</label>
+                                <input class="form-control" type="password" id="pass2" name="pass2" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block"> Register </button>
+                            </div>
+                        </form>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
